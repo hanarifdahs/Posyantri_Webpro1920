@@ -26,8 +26,9 @@ class kader extends CI_Model{
         $this->db->where('id', $id);
 		return $this->db->delete('jadwal');
     }
-    function login(){
-        
+    function logout(){
+        $this->session->sess_destroy();
+        redirect('');
     }
 }
 ?>
