@@ -11,5 +11,8 @@ class mPasien extends CI_Model{
 		return $this->db->get('pasien');
 	}
 
+	public function getPasienbyUser($id_user){
+		return $this->db->get_where('pasien', array('id_user' => $id_user))->result_array()[0]['id_pasien'];
+	}
 }
 ?>

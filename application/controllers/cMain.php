@@ -13,7 +13,9 @@ class cMain extends CI_Controller {
     
 	public function index()
 	{
-		$this->load->view('public/main');
+        $this->load->view('public/header');
+        $this->load->view('public/main');
+        $this->load->view('public/footer');
     }
     
     public function showLogin()
@@ -26,32 +28,39 @@ class cMain extends CI_Controller {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $dataLogin = $this->mUser->cekLogin($username,$password);
-        $role = $this->mUser->cekRole($dataLogin->result_array()[0]['role_id']);
-
-        if ($dataLogin->num_rows() > 0) {
+        $cekLogin = $this->mUser->cekLogin($username,$password);
+        
+        if ($cekLogin->num_rows() > 0) {
+            $dataLogin = $cekLogin->result_array();
+            $role = $this->mUser->cekRole($dataLogin[0]['role_id']);
+            
             $dataSession = array(
+                'id' => $dataLogin[0]['id'],
 				'username' => $username,
-				'role' => $role
+                'role' => $role,
+                'is_active' => true
 				);
             $this->session->set_userdata($dataSession);
             if ($role == 'pasien') {
                 //redirect controller pasien
-                //redirect('cPasien'); 
-                $this->session->set_flashdata('flash', $role.' telah login');
-                redirect('cMain/index');
+                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
+                redirect('cPasien'); 
             }
             else if ($role == 'kader'){
-                //redirect controller kader
+                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
                 //redirect('cKader');
-                $this->session->set_flashdata('flash', $role.' telah login');
-                redirect('cMain/index');
+                //placeholder, belum ada controller kader
+                $this->load->view('public/header');
+                $this->load->view('public/main');
+                $this->load->view('public/footer');
             }
             else if ($role == 'pengurus'){
-                //redirect controller pengurus
+                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
                 //redirect('cPengurus');
-                $this->session->set_flashdata('flash', $role.' telah login');
-                redirect('cMain/index');
+                //placeholder, belum ada controller pengurus
+                $this->load->view('public/header');
+                $this->load->view('public/main');
+                $this->load->view('public/footer');
             }
         }
         else{
