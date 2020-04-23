@@ -16,6 +16,7 @@ class cMain extends CI_Controller {
         $this->load->view('public/header');
         $this->load->view('public/main');
         $this->load->view('public/footer');
+        //$this->load->view('index');
     }
     
     public function showLogin()
@@ -41,6 +42,7 @@ class cMain extends CI_Controller {
                 'is_active' => true
 				);
             $this->session->set_userdata($dataSession);
+            
             if ($role == 'pasien') {
                 //redirect controller pasien
                 $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
@@ -56,16 +58,29 @@ class cMain extends CI_Controller {
             }
             else if ($role == 'pengurus'){
                 $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
-                //redirect('cPengurus');
+                redirect('Pengurus');
                 //placeholder, belum ada controller pengurus
-                $this->load->view('public/header');
-                $this->load->view('public/main');
-                $this->load->view('public/footer');
             }
         }
         else{
             $this->session->set_flashdata('flash', 'Username/Password Salah');
             redirect('cMain/showLogin');
         }
+    }
+
+    public function logout()
+	{
+        $this->cekSession();
+        $this->session->set_userdata('is_active', false);
+        $this->session->set_flashdata('flash', 'Berhasil Logout');	
+        redirect('cMain');
+    }
+
+    public function cekSession(){
+        if(!$this->session->is_active){
+			$this->session->set_flashdata('flash', 'Sesi berakhir');			
+			redirect('cMain');
+			exit;
+		}
     }
 }

@@ -41,4 +41,19 @@ class cPasien extends CI_Controller {
         $this->load->view('pasien/jadwal', $data);
         $this->load->view('pasien/footer');
     }
+
+    public function pilihJadwal(){
+        $id_jadwal = $this->input->post('id_jadwal');
+        $data['jadwal'] = $this->mJadwal->getJadwalByID($id_jadwal)[0];
+        $this->load->view('pasien/header');
+        $this->load->view('pasien/konfirmasiJadwal', $data);
+        $this->load->view('pasien/footer');
+    }
+
+    public function actionBooking(){
+        $id_jadwal = $this->input->post('id_jadwal');
+        $id_pasien = $this->mPasien->getPasienByUser($this->session->id);
+        echo $this->mBooking->insertBooking($id_jadwal, $id_pasien);
+    }
+
 }
