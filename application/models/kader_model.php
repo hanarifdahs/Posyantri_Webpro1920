@@ -1,30 +1,37 @@
 <?php 
 class kader extends CI_Model{
     function view_all() {
-        $this->db->order_by('id');
+        $this->db->order_by('id_jadwal');
         return $this->db->get('jadwal');
     }
     function insert_jadwal(){
         $data = [
-			"nama_pasien" => $this->input->post('nama_pasien', true),
-			"nama_kader" => $this->input->post('nama_kader', true),
-			"jam" => $this->input->post('jam', true),
+			"id_kategori" => $this->input->post('id_kategori', true),
+			"id_petugas" => $this->input->post('id_petugas', true),
+            "jam" => $this->input->post('jam', true),
+            "tanggal" => $this->input->post('tanggal',true)
 		];
         return $this->db->insert('jadwal', $data);
     }
     function update_jadwal(){
         $data = [
-			"nama_pasien" => $this->input->post('nama_pasien', true),
-			"nama_kader" => $this->input->post('nama_kader', true),
-			"jam" => $this->input->post('jam', true),
+			"id_kategori" => $this->input->post('id_kategori', true),
+			"id_petugas" => $this->input->post('id_petugas', true),
+            "jam" => $this->input->post('jam', true),
+            "tanggal" => $this->input->post('tanggal',true)
 		];
-		$this->db->where('id', $id);
+		$this->db->where('id_jadwal', $id_jadwal);
 		//use query builder class to update data mahasiswa based on id
 		return $this->db->update('jadwal', $data);
     }
     function delete_jadwal(){
-        $this->db->where('id', $id);
+        $this->db->where('id_jadwal', $id_jadwal);
 		return $this->db->delete('jadwal');
+    }
+    function confirm_book(){
+        $this->db->set('konfirmasi', True);
+        $this->db->where('id_booking', $id_booking)
+        return $this->db->update('booking')
     }
     function logout(){
         $this->session->sess_destroy();
