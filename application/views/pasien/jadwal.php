@@ -19,7 +19,7 @@
                 <td><?= $row['nama_kategori']; ?></td>
                 <td><?= $row['id_petugas']; ?></td>
                 <td>
-                    <form method="post" action="<?php echo base_url('cPasien/pilihjadwal/') ?>">
+                    <form method="post" action="<?php echo base_url('Pasien/pilihjadwal/') ?>">
                         <input type="hidden" value="<?= $row['id_jadwal']; ?>" name="id_jadwal">
                         <input type="submit" value="Pilih Jadwal" name="submit">
                     </form>

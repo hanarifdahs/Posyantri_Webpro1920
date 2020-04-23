@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class cMain extends CI_Controller {
+class Main extends CI_Controller {
 
     public function __construct()
 	{
@@ -46,7 +46,7 @@ class cMain extends CI_Controller {
             if ($role == 'pasien') {
                 //redirect controller pasien
                 $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
-                redirect('cPasien'); 
+                redirect('Pasien'); 
             }
             else if ($role == 'kader'){
                 $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');

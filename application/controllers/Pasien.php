@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class cPasien extends CI_Controller {
+class Pasien extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('mPasien');
@@ -53,7 +53,11 @@ class cPasien extends CI_Controller {
     public function actionBooking(){
         $id_jadwal = $this->input->post('id_jadwal');
         $id_pasien = $this->mPasien->getPasienByUser($this->session->id);
-        echo $this->mBooking->insertBooking($id_jadwal, $id_pasien);
+        $id = $this->mBooking->insertBooking($id_jadwal, $id_pasien);
+        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id);
+        $this->load->view('pasien/header');
+        $this->load->view('pasien/main');
+        $this->load->view('pasien/footer');
     }
 
 }
