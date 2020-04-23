@@ -1,5 +1,8 @@
 <?php 
 class kader extends CI_Model{
+    public function __construct(){
+        $this->load->database();
+    }
     function view_all() {
         $this->db->order_by('id_jadwal');
         return $this->db->get('jadwal');
@@ -9,7 +12,7 @@ class kader extends CI_Model{
 			"id_kategori" => $this->input->post('id_kategori', true),
 			"id_petugas" => $this->input->post('id_petugas', true),
             "jam" => $this->input->post('jam', true),
-            "tanggal" => $this->input->post('tanggal',true)
+            "tanggal" => $this->input->post('tanggal',true),
 		];
         return $this->db->insert('jadwal', $data);
     }
@@ -30,8 +33,13 @@ class kader extends CI_Model{
     }
     function confirm_book(){
         $this->db->set('konfirmasi', True);
-        $this->db->where('id_booking', $id_booking)
-        return $this->db->update('booking')
+        $this->db->where('id_booking', $id_booking);
+        return $this->db->update('booking');
+    }
+    function take_jadwal(){
+        $this->db->set('taken', True);
+        $this->db->where('id_jadwal', $id_jadwal);
+        return $this->db->update('jadwal')
     }
     function logout(){
         $this->session->sess_destroy();
