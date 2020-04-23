@@ -13,21 +13,21 @@ class Kader extends CI_Controller {
     }
 
     public function cekSession(){
-        if(!$this->session->is_active){
-            $this->session->set_flashdata('flash', 'Sesi berakhir');			
-			redirect('Main');
-			exit;
-		} else{
-            if($this->session->role == 'pasien'){
-                redirect('Pasien');
-            } elseif ($this->session->role == 'pengurus') {
-                redirect('Pengurus');
-            } elseif ($this->session->role == 'kader'){
+        // if(!$this->session->is_active){
+        //     $this->session->set_flashdata('flash', 'Sesi berakhir');			
+		// 	redirect('Main');
+		// 	exit;
+		// } else{
+        //     if($this->session->role == 'pasien'){
+        //         redirect('Pasien');
+        //     } elseif ($this->session->role == 'pengurus') {
+        //         redirect('Pengurus');
+        //     } elseif ($this->session->role == 'kader'){
 
-            } else{
-                redirect('Main');
-            }
-        }
+        //     } else{
+        //         redirect('Main');
+        //     }
+        // }
     }
     
     public function index(){
@@ -85,7 +85,7 @@ class Kader extends CI_Controller {
             $this->load->view('kader/tambah_jadwal', $data);
             $this->load->view('kader/footer');
         } else {
-            $this->mJadwal->tambah_jadwal();
+            $this->mJadwal->tambahJadwal();
             $this->session->set_flashdata('flash', 'ditambahkan');
             redirect('kader/jadwal');
         }
@@ -93,15 +93,15 @@ class Kader extends CI_Controller {
     
     public function hapusjadwal($id_jadwal)
     {
-        $this->m_jadwal->delete_jadwal($id_jadwal);
+        $this->mJadwal->delete_jadwal($id_jadwal);
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('kader/jadwal');
     }
 
     public function takejadwal($id_jadwal)
     {
-        $this->m_jadwal->take_jadwal($id_jadwal);
-        $this->session->set_flashdata('flash', 'dihapus');
+        $this->mJadwal->take_jadwal($id_jadwal);
+        $this->session->set_flashdata('flash', 'diambil');
         redirect('kader/jadwal');
     }
 
