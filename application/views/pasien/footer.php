@@ -11,5 +11,9 @@
     <script src="<?=base_url()?>assets/js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="<?=base_url()?>assets/js/holder.min.js" language="javascript" type="text/javascript"></script>
-</body>
+    <script src="<?=base_url()?>assets/js/popper.js"language="javascript" type="text/javascript"></script>
+    <script src="<?=base_url()?>vendor/select2/select2.min.js"language="javascript" type="text/javascript"></script>
+    <script src="<?=base_url()?>js/main.js"language="javascript" type="text/javascript"></script>
+
+  </body>
 </html>
