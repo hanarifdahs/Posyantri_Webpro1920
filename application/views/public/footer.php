@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
-</head>
-<body>
+
 <footer class="site-footer">
   <div id="footer-content">
     <p>Posyantri - Webpro 19/20 </p>
   </div>
 </footer>
+<script src="<?=base_url()?>assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="<?=base_url()?>assets/js/vendor/popper.min.js"></script>
+    <script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="<?=base_url()?>assets/js/holder.min.js"></script>
 </body>
 </html>
