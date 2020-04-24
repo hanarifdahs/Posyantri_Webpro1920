@@ -2,9 +2,13 @@
      left: 0;
      bottom: 0;
     width: 100%;
-    background-color: #3b8bc4;
+    background: #3b8bc4;
     color: white;
      text-align: center;
 .badge{
     margin-left: 3px;
+}
+.featurette-divider{
+    margin-left: 3px;
+    justify-content: center;
 }
