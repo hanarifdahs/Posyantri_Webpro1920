@@ -191,13 +191,13 @@ class Pengurus extends CI_Controller
         $this->cekSession();
         $this->session->set_userdata('is_active', false);
         $this->session->set_flashdata('flash', 'Berhasil Logout');	
-        redirect('cMain');
+        redirect('Main');
     }
 
     public function cekSession(){
         if(!$this->session->is_active){
 			$this->session->set_flashdata('flash', 'Sesi berakhir');			
-			redirect('cMain');
+			redirect('Main');
 			exit;
 		}
     }

@@ -32,7 +32,7 @@ class Pasien extends CI_Controller {
         $this->cekSession();
         $this->session->set_userdata('is_active', false);
         $this->session->set_flashdata('flash', 'Berhasil Logout');	
-        redirect('cMain');
+        redirect('Main');
     }
     
     public function showJadwalPage(){
