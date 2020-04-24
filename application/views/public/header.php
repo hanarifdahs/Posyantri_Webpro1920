@@ -12,11 +12,11 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>assets/css/carousel.css" rel="stylesheet">
-    <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/carousel.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet" type="text/css">
     <style>
       .modal-backdrop {
         z-index: 1;
