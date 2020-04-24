@@ -22,7 +22,7 @@ class Pasien extends CI_Controller {
     public function cekSession(){
         if(!$this->session->is_active){
 			$this->session->set_flashdata('flash', 'Sesi berakhir');			
-			redirect('cMain');
+			redirect('Main');
 			exit;
 		}
     }
@@ -54,10 +54,31 @@ class Pasien extends CI_Controller {
         $id_jadwal = $this->input->post('id_jadwal');
         $id_pasien = $this->mPasien->getPasienByUser($this->session->id);
         $id = $this->mBooking->insertBooking($id_jadwal, $id_pasien);
-        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id);
+        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id)['id_pasien'];
         $this->load->view('pasien/header');
         $this->load->view('pasien/main');
         $this->load->view('pasien/footer');
     }
 
+    public function Account(){
+        $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
+        $this->load->view('pasien/header');
+        $this->load->view('pasien/account', $data);
+        $this->load->view('pasien/footer');
+    }
+
+    public function updateAccount(){
+        $nik = $this->input->post('nik');
+        $nama = $this->input->post('nama');
+        $umur = $this->input->post('umur');
+        $alamat = $this->input->post('alamat');
+        $id = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
+        $this->mPasien->updatePasien($nik,$nama,$umur,$alamat,$id);
+
+        $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
+        $this->session->set_flashdata('flash', 'Berhasil Update Biodata');
+        $this->load->view('pasien/header');
+        $this->load->view('pasien/account', $data);
+        $this->load->view('pasien/footer');
+    }
 }

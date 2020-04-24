@@ -12,7 +12,17 @@ class mPasien extends CI_Model{
 	}
 
 	public function getPasienByUser($id_user){
-		return $this->db->get_where('detailpasien', array('id_user' => $id_user))->result_array()[0]['id_pasien'];
+		return $this->db->get_where('detailpasien', array('id_user' => $id_user))->result_array()[0];
+	}
+
+	public function updatePasien($nik, $nama, $umur, $alamat, $id_pasien){
+		$data = [
+			'nama' => $nama,
+			'umur' => $umur,
+			'alamat' => $alamat,
+			'NIK' => $nik
+		];
+		return $this->db->update('detailpasien', $data, array('id_pasien' => $id_pasien));
 	}
 }
 ?>

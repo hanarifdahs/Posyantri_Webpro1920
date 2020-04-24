@@ -43,6 +43,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Booking</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
+            </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
