@@ -17,10 +17,10 @@ class mBooking extends CI_Model{
     
     public function insertBooking($id_jadwal, $id_pasien){
         $data = [
-			"id_jadwal" => $id_jadwal,
-			"id_pasien" => $id_pasien,
-            "konfirmasi" => 0,
-            "selesai" => 0
+			'id_jadwal' => $id_jadwal,
+			'id_pasien' => $id_pasien,
+            'konfirmasi' => 0,
+            'selesai' => 0
 		];
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
