@@ -41,7 +41,7 @@
               <a class="nav-link" href="<?php echo base_url('Pasien/showJadwalPage'); ?>">Jadwal</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Booking</a>
+              <a class="nav-link" href="#">Antrian Saya</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>

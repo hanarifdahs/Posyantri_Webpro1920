@@ -47,7 +47,7 @@
               <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
-                    <form>
+                    <form method="post" action="<?php echo base_url('main/actionLogin'); ?>">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

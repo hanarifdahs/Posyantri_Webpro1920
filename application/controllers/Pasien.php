@@ -36,7 +36,7 @@ class Pasien extends CI_Controller {
     }
     
     public function showJadwalPage(){
-        $data['jadwal'] = $this->mJadwal->getAllJadwal();
+        $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
         $this->load->view('pasien/header');
         $this->load->view('pasien/jadwal', $data);
         $this->load->view('pasien/footer');
@@ -44,7 +44,7 @@ class Pasien extends CI_Controller {
 
     public function pilihJadwal(){
         $id_jadwal = $this->input->post('id_jadwal');
-        $data['jadwal'] = $this->mJadwal->getJadwalByID($id_jadwal)[0];
+        $data['jadwal'] = $this->mJadwal->getJadwalByIdJoin($id_jadwal)[0];
         $this->load->view('pasien/header');
         $this->load->view('pasien/konfirmasiJadwal', $data);
         $this->load->view('pasien/footer');

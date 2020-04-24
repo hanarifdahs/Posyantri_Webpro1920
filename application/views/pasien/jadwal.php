@@ -1,4 +1,4 @@
-    <h3>INI PASIEN/JADWAL.php</h3>
+    <br><br>
     <h1>JADWAL POSYANDU</h1>
     <table border=1>
         <thead>
@@ -9,7 +9,7 @@
                 <th class="text-center" scope="col">Kategori</th>
                 <th class="text-center" scope="col">Petugas</th>
             </tr>
-        </thead>
+        </thead>    
         <tbody>
             <?php foreach ($jadwal as $row){ ?>
             <tr>
@@ -24,7 +24,39 @@
                         <input type="submit" value="Pilih Jadwal" name="submit">
                     </form>
                 </td>
+                <td>
+                    <button type="button" class="nav-link btn btn-primary" data-toggle="modal" data-target="#pilih">Pilih Jadwal</button>
+                </td>
             </tr>
             <?php } ?>
         </tbody>
     </table>
+
+    <div class="modal fade" id="pilih" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="<?php echo base_url('Pasien/actionBooking/') ?>">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi Pilihan Jadwal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Username</label>
+                            <label><?= $row['id_jadwal'];?></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

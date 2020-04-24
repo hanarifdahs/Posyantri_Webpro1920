@@ -13,6 +13,14 @@ class mJadwal extends CI_Model{
         return $query->result_array();
     }
 
+    public function getAllJadwalJoin(){
+		$this->db->select('*');
+        $this->db->from('jadwal');
+        $this->db->join('kategori', 'kategori.id_kategori = jadwal.id_kategori');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function tambahJadwal()
     {
         $data = [
@@ -35,6 +43,13 @@ class mJadwal extends CI_Model{
     public function getJadwalbyId($id)
     {
         return $this->db->get_where('jadwal', ['id_jadwal' => $id])->row_array();
+    }
+
+    public function getJadwalByIdJoin($id)
+    {
+        $this->db->join('kategori', 'kategori.id_kategori = jadwal.id_kategori');
+        $query = $this->db->get_where('jadwal', array('id_jadwal' => $id));
+        return $query->result_array();
     }
 
     public function updateJadwal()
