@@ -14,7 +14,8 @@ class Pasien extends CI_Controller {
 	public function index()
 	{
         $this->cekSession();
-		$this->load->view('pasien/header');
+        $current['aktif'] = 'main';
+        $this->load->view('pasien/header', $current);
         $this->load->view('pasien/main');
         $this->load->view('pasien/footer');
 	}
@@ -35,34 +36,40 @@ class Pasien extends CI_Controller {
         redirect('Main');
     }
     
-    public function showJadwalPage(){
+    public function Jadwal(){
         $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
-        $this->load->view('pasien/header');
+        $current['aktif'] = 'jadwal';
+        $this->load->view('pasien/header', $current);
         $this->load->view('pasien/jadwal', $data);
         $this->load->view('pasien/footer');
     }
 
-    public function pilihJadwal(){
+    /*public function pilihJadwal(){
         $id_jadwal = $this->input->post('id_jadwal');
         $data['jadwal'] = $this->mJadwal->getJadwalByIdJoin($id_jadwal)[0];
         $this->load->view('pasien/header');
         $this->load->view('pasien/konfirmasiJadwal', $data);
         $this->load->view('pasien/footer');
-    }
+    }*/
 
     public function actionBooking(){
+        $this->cekSession();
         $id_jadwal = $this->input->post('id_jadwal');
-        $id_pasien = $this->mPasien->getPasienByUser($this->session->id);
+        $id_pasien = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
         $id = $this->mBooking->insertBooking($id_jadwal, $id_pasien);
-        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id)['id_pasien'];
-        $this->load->view('pasien/header');
-        $this->load->view('pasien/main');
+        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id);
+
+        $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
+        $current['aktif'] = 'jadwal';
+        $this->load->view('pasien/header', $current);
+        $this->load->view('pasien/jadwal', $data);
         $this->load->view('pasien/footer');
     }
 
     public function Account(){
         $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
-        $this->load->view('pasien/header');
+        $current['aktif'] = 'account';
+        $this->load->view('pasien/header', $current);
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');
     }
@@ -77,7 +84,8 @@ class Pasien extends CI_Controller {
 
         $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
         $this->session->set_flashdata('flash', 'Berhasil Update Biodata');
-        $this->load->view('pasien/header');
+        $current['aktif'] = 'account';
+        $this->load->view('pasien/header', $current);
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');
     }

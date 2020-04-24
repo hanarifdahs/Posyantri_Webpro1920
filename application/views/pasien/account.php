@@ -1,4 +1,4 @@
-    <h2>INI pasien/account.php</h2><br>
+    <br><br>
     NIK : <?php echo $biodata['NIK'] ; ?><br>
     Nama : <?php echo $biodata['nama'] ; ?><br>
     Umur : <?php echo $biodata['umur'] ; ?><br>
