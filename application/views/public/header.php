@@ -16,13 +16,14 @@
 
     <!-- Custom styles for this template -->
     <link href="<?=base_url()?>assets/css/carousel.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">
     <style>
       .modal-backdrop {
         z-index: 1;
       }
     </style>
-    </head>
-    <body>
+  </head>
+  <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">
@@ -38,9 +39,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Jadwal</a>
             </li>
           </ul>
           <ul class="navbar-nav">
@@ -58,8 +56,8 @@
                       </div>
                       <div class="modal-body">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+                          <label for="exampleInputUsername1">Username</label>
+                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Enter username" name="username">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
@@ -78,5 +76,3 @@
         </div>
       </nav>
     </header>
-    </body>
-</html>
