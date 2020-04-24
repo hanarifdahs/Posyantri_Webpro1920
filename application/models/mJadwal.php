@@ -14,5 +14,12 @@ class mJadwal extends CI_Model{
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function getJadwalByID($id_jadwal){
+        $this->db->select('*');
+        $this->db->join('kategori', 'kategori.id_kategori = jadwal.id_kategori');
+        $query = $this->db->get_where('jadwal', array('id_jadwal' => $id_jadwal));
+        return $query->result_array();
+    }
 }
 ?>

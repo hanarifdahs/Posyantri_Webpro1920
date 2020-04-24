@@ -1,5 +1,5 @@
 <?php 
-class kader extends CI_Model{
+class kader_model extends CI_Model{
     public function __construct(){
         $this->load->database();
     }
@@ -39,11 +39,54 @@ class kader extends CI_Model{
     function take_jadwal(){
         $this->db->set('taken', True);
         $this->db->where('id_jadwal', $id_jadwal);
-        return $this->db->update('jadwal')
+        return $this->db->update('jadwal');
     }
     function logout(){
         $this->session->sess_destroy();
         redirect('');
+    }
+    //-----------------------------------------------------
+    //-----------------------------------------------------
+    public function getAllKader()
+    {
+        $query = $this->db->get('user');
+        return $query->result_array();
+    }
+
+    public function tambahDataKader()
+    {
+        $data = [
+            "name" => $this->input->post('name', true),
+            "username" => $this->input->post('username', true),
+            "password" => $this->input->post('password', true),
+            "role_id" => '2'
+        ];
+
+        $this->db->insert('user', $data);
+    }
+
+    public function hapusDataKader($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+    }
+
+    public function getKaderbyId($id)
+    {
+        return $this->db->get_where('user', ['id' => $id])->row_array();
+    }
+
+    public function updateDatakader()
+    {
+        $data = [
+            "name" => $this->input->post('name', true),
+            "username" => $this->input->post('username', true),
+            "password" => $this->input->post('password', true),
+            "role_id" => '2'
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('user', $data);
     }
 }
 ?>
