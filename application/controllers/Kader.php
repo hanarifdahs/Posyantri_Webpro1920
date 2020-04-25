@@ -144,7 +144,7 @@ class Kader extends CI_Controller {
     {
         //$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['title'] = 'booking';
-        $data['user'] = $this->mBooking->getAllBooking();
+        $data['user'] = $this->mBooking->getAllBookingJoin();
 
         $this->load->view('kader/header', $data);
         $this->load->view('kader/sidebar', $data);
@@ -157,7 +157,7 @@ class Kader extends CI_Controller {
     public function detailbooking($id)
     {
         $data['title'] = 'Detail Data Booking';
-        $data['user'] = $this->mBooking->getBookingbyID($id);
+        $data['user'] = $this->mBooking->getBookingByPasien_JoinJadwalKategori($id)[0];
 
         $this->load->view('kader/header', $data);
         $this->load->view('kader/sidebar', $data);
@@ -170,6 +170,13 @@ class Kader extends CI_Controller {
     {
         $this->mBooking->konfirmasiBooking($id);
         $this->session->set_flashdata('flash', 'dikonfirmasi');
+        redirect('kader/k_booking');
+    }
+
+    public function hapusbooking($id)
+    {
+        $this->mBooking->deleteBooking($id);
+        $this->session->set_flashdata('flash', 'dihapus');
         redirect('kader/k_booking');
     }
 

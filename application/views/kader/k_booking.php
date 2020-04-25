@@ -20,7 +20,8 @@
             <div class="col-md-6">
                 <ul class="list-group">
                     <?php foreach ($user as $usr) : ?>
-                        <li class="list-group-item"><?php echo $usr['id_booking']; ?>
+                        <li class="list-group-item"><?php echo $usr['tanggal']; ?>
+                            <a href="<?= base_url(); ?>kader/hapusbooking/<?= $usr['id_booking']; ?>" class="badge badge-danger float-right" onclick="return confirm('yakin?');">Hapus</a>
                             <a href="<?= base_url(); ?>kader/detailbooking/<?= $usr['id_booking']; ?>" class="badge badge-primary float-right">Detail</a>
                             <a href="<?= base_url(); ?>kader/konfirmbooking/<?= $usr['id_booking']; ?>" class="badge badge-danger float-right" onclick="return confirm('yakin?');">Konfirmasi</a>
                         </li>
