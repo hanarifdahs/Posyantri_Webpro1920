@@ -66,30 +66,47 @@
 
             <?php if ($aktif=='booking'){ ?>
             <li class="nav-item active">
-              <a class="nav-link" href="">Antrian Saya</a>
+              <a class="nav-link" href="<?php echo base_url('Pasien/Booking'); ?>">Antrian Saya</a>
             </li>
             <?php }else{ ?>
             <li class="nav-item">
-              <a class="nav-link" href="">Antrian Saya</a>
+              <a class="nav-link" href="<?php echo base_url('Pasien/Booking'); ?>">Antrian Saya</a>
             </li>
             <?php };?>
 
-            <?php if ($aktif=='account'){ ?>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-body">
+                            <label>Anda yakin ingin Logout?</label>
+                          </div>
+                          <div class="modal-footer">
+                            <a button class="btn btn-primary" href="<?= base_url('Pasien/logout'); ?>">Logout</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
+            <div class="dropdown">
+              <button class="nav-link active btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="<?=base_url()?>assets/img/person.svg"></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item disabled"><?php echo $this->session->username; ?></a>
+                <div class="dropdown-divider"></div>
+                <?php if ($aktif=='account'){ ?>
+                <a class="dropdown-item active" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
+                <?php }else{ ?>
+                <a class="dropdown-item" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
+                <?php };?>
+                <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" href="">Logout</a>
+              </div>
+            </div>
             </li>
-            <?php }else{ ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
-            </li>
-            <?php };?>
-
         </ul>
-        <ul>
-          <div class="logout">
-            <button style="margin-top: 8px;"type="button" class="btn btn-primary">Logout</button>
-            <a class="nav-link" href="<?php echo base_url('auth/Logout'); ?>"></a>
-  
-        </ul>
-    </nav>
+      </nav>
     </header>
