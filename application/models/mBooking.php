@@ -8,11 +8,12 @@ class mBooking extends CI_Model{
 	}
 
 	public function getAllBooking(){
-		return $this->db->get('booking');
+        $query = $this->db->get('booking');
+        return $query->result_array();
     }
 
     public function getBookingbyID($id_booking){
-
+        return $this->db->get_where('booking', ['id_booking' => $id_booking])->row_array();
     }
     
     public function insertBooking($id_jadwal, $id_pasien){
