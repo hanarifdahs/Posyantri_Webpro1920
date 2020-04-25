@@ -14,7 +14,6 @@
       <div class="container">
         <div class="carousel-caption text-left">
           <h1>Pemeriksaan Batita dan Balita</h1>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
         </div>
       </div>
     </div>
