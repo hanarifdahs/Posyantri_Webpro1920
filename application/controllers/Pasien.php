@@ -52,6 +52,15 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/footer');
     }*/
 
+    public function Booking(){
+        $id_pasien = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
+        $data['antrian'] = $this->mBooking->getBookingByPasien_JoinJadwalKategori($id_pasien);
+        $current['aktif'] = 'booking';
+        $this->load->view('pasien/header', $current);
+        $this->load->view('pasien/antrian', $data);
+        $this->load->view('pasien/footer');
+    }
+
     public function actionBooking(){
         $this->cekSession();
         $id_jadwal = $this->input->post('id_jadwal');

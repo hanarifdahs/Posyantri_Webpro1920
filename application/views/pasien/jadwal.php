@@ -1,8 +1,7 @@
     <br><br>
-    <h1 style="text-align: center;">JADWAL POSYANDU</h1>
+    <h1 style="text-align: center;">JADWAL POSYANDU HARI INI</h1>
     <?php if ($this->session->flashdata('flash')) : ?>
-    <div class="row mt-3">
-        <div class="col-md-6">
+        <div class="row justify-content-md-center">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <?= $this->session->flashdata('flash'); ?>.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -10,14 +9,13 @@
                 </button>
             </div>
         </div>
-    </div>
     <?php endif; ?>
-        
+    
     <table class="table" id="tablenyahana" border=1>
         <div id="table">
         <thead class="thead-dark">
             <tr>
-                <th class="text-center" scope="col">ID</th>
+                <!--th class="text-center" scope="col">ID</th>-->
                 <th class="text-center" scope="col">Tanggal</th>
                 <th class="text-center" scope="col">Jam</th>
                 <th class="text-center" scope="col">Kategori</th>
@@ -26,9 +24,11 @@
             </tr>
         </thead>    
         <tbody>
+            <?php $date = date('Y-m-d'); $time = date('H:i');?>
             <?php foreach ($jadwal as $row){ ?>
+            <?php if($row['taken']==0 && $row['tanggal']==$date && $row['jam'] > $time){ ?>
             <tr>
-                <td style="text-align: center"class="id"><?= $row['id_jadwal']; ?></td>
+                <!--<td style="text-align: center"class="id"><?= $row['id_jadwal']; ?></td>-->
                 <td style="text-align: center"class="tgl"><?= $row['tanggal']; ?></td>
                 <td style="text-align: center"class="jam"><?= $row['jam']; ?></td>
                 <td style="text-align: center"class="namakat"><?= $row['nama_kategori']; ?></td>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php }} ?>
         </tbody>
         </div>
     </table>

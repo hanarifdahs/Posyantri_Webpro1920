@@ -43,7 +43,7 @@
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <button type="button" class="nav-link btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
+              <button type="button" class="nav-link active btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
               <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">

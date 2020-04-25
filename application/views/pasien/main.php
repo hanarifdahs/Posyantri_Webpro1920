@@ -14,7 +14,7 @@
       <div class="container">
         <div class="carousel-caption text-left">
           <h1>Pemeriksaan Batita</h1>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Mulai Booking</a></p>
+          <p><a class="btn btn-lg btn-primary" href="<?php echo base_url('Pasien/Jadwal'); ?>" role="button">Mulai Booking</a></p>
         </div>
       </div>
     </div>
