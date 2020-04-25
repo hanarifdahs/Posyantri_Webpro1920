@@ -1,8 +1,19 @@
+
 #footer-content {
      left: 0;
      bottom: 0;
+     height: 100px;
     width: 100%;
     background: #3b8bc4;
     color: white;
      text-align: center;
+}
+
+#tablenyahana {
+     margin: 25px auto 50px auto;
+     width: 80%;
+}
+
+body {
+     padding-bottom: 0px !important;
 }

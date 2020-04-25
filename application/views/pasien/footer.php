@@ -2,7 +2,7 @@
   <div id="footer-content">
     <p>Posyantri - Webpro 19/20 </p>
   </div>
-</footer>
+</footer style="margin-top: auto; background: #FFFFF">
     <!--<script src="<?=base_url()?>assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" language="javascript" type="text/javascript"></script>-->
     <script src="<?=base_url()?>assets/js/jquery-3.2.1.slim.min.js" language="javascript" type="text/javascript"></script>
     <!--<script>window.jQuery || document.write("<script src='../../assets/js/vendor/jquery-slim.min.js' type='text/javascript'></script>");</script>-->
@@ -14,6 +14,6 @@
     <script src="<?=base_url()?>assets/js/popper.js"language="javascript" type="text/javascript"></script>
     <script src="<?=base_url()?>vendor/select2/select2.min.js"language="javascript" type="text/javascript"></script>
     <script src="<?=base_url()?>js/main.js"language="javascript" type="text/javascript"></script>
-
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   </body>
 </html>

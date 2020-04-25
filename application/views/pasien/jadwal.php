@@ -1,5 +1,5 @@
     <br><br>
-    <h1>JADWAL POSYANDU</h1>
+    <h1 style="text-align: center;">JADWAL POSYANDU</h1>
     <?php if ($this->session->flashdata('flash')) : ?>
     <div class="row mt-3">
         <div class="col-md-6">
@@ -12,27 +12,29 @@
         </div>
     </div>
     <?php endif; ?>
-
-    <table border=1>
-        <thead>
+        
+    <table class="table" id="tablenyahana" border=1>
+        <div id="table">
+        <thead class="thead-dark">
             <tr>
                 <th class="text-center" scope="col">ID</th>
                 <th class="text-center" scope="col">Tanggal</th>
                 <th class="text-center" scope="col">Jam</th>
                 <th class="text-center" scope="col">Kategori</th>
                 <th class="text-center" scope="col">Petugas</th>
+                <th class="text-center" scope="col"> </th>
             </tr>
         </thead>    
         <tbody>
             <?php foreach ($jadwal as $row){ ?>
             <tr>
-                <td class="id"><?= $row['id_jadwal']; ?></td>
-                <td class="tgl"><?= $row['tanggal']; ?></td>
-                <td class="jam"><?= $row['jam']; ?></td>
-                <td class="namakat"><?= $row['nama_kategori']; ?></td>
-                <td class="namapet"><?= $row['id_petugas']; ?></td>
+                <td style="text-align: center"class="id"><?= $row['id_jadwal']; ?></td>
+                <td style="text-align: center"class="tgl"><?= $row['tanggal']; ?></td>
+                <td style="text-align: center"class="jam"><?= $row['jam']; ?></td>
+                <td style="text-align: center"class="namakat"><?= $row['nama_kategori']; ?></td>
+                <td style="text-align: center"class="namapet"><?= $row['id_petugas']; ?></td>
                 <td>
-                    <a button type="button" href="#<?= ''.$row['id_jadwal'].'';?>" class="nav-link btn btn-primary" data-toggle="modal">Pilih Jadwal</a>
+                    <a button style="width:125px;height:40px; margin: 0px auto;" type="button" href="#<?= ''.$row['id_jadwal'].'';?>" class="nav-link btn btn-primary" data-toggle="modal">Pilih Jadwal</a>
                 </td>
             </tr>
             <div class="modal fade" id="<?= ''.$row['id_jadwal'].'';?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -73,6 +75,7 @@
             </div>
             <?php } ?>
         </tbody>
+        </div>
     </table>
 
     
