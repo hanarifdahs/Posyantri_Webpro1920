@@ -41,7 +41,7 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('pengurus/logout') ?>">
+                <a class="nav-link" href="<?= base_url('kader/logout') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Logout</span></a>
             </li>

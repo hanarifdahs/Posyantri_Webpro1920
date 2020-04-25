@@ -13,21 +13,21 @@ class Kader extends CI_Controller {
     }
 
     public function cekSession(){
-        // if(!$this->session->is_active){
-        //     $this->session->set_flashdata('flash', 'Sesi berakhir');			
-		// 	redirect('Main');
-		// 	exit;
-		// } else{
-        //     if($this->session->role == 'pasien'){
-        //         redirect('Pasien');
-        //     } elseif ($this->session->role == 'pengurus') {
-        //         redirect('Pengurus');
-        //     } elseif ($this->session->role == 'kader'){
+        if(!$this->session->is_active){
+            $this->session->set_flashdata('flash', 'Sesi berakhir');			
+			redirect('Main');
+			exit;
+		} else{
+            if($this->session->role == 'pasien'){
+                redirect('Pasien');
+            } elseif ($this->session->role == 'pengurus') {
+                redirect('Pengurus');
+            } elseif ($this->session->role == 'kader'){
 
-        //     } else{
-        //         redirect('Main');
-        //     }
-        // }
+            } else{
+                redirect('Main');
+            }
+        }
     }
     
     public function index(){
@@ -138,6 +138,39 @@ class Kader extends CI_Controller {
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('kader/jadwal');
         }
+    }
+
+    public function k_booking()
+    {
+        //$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['title'] = 'booking';
+        $data['user'] = $this->mBooking->getAllBooking();
+
+        $this->load->view('kader/header', $data);
+        $this->load->view('kader/sidebar', $data);
+        $this->load->view('kader/topbar', $data);
+        $this->load->view('kader/k_booking', $data);
+        $this->load->view('kader/footer');
+        $this->load->model('mBooking');
+    }
+
+    public function detailbooking($id)
+    {
+        $data['title'] = 'Detail Data Booking';
+        $data['user'] = $this->mBooking->getBookingbyID($id);
+
+        $this->load->view('kader/header', $data);
+        $this->load->view('kader/sidebar', $data);
+        $this->load->view('kader/topbar', $data);
+        $this->load->view('kader/detailbooking', $data);
+        $this->load->view('kader/footer');
+    }
+
+    public function konfirmbooking($id)
+    {
+        $this->mBooking->konfirmasiBooking($id);
+        $this->session->set_flashdata('flash', 'dikonfirmasi');
+        redirect('kader/k_booking');
     }
 
     public function logout(){

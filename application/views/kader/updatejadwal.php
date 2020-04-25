@@ -28,7 +28,7 @@
                             <input type="text" class="form-control" id="id_kategori" name="id_kategori" placeholder="Masukkan ID Kategori">
                         </div>
                         <div class="form-group">
-                            <label for="id_petugas">ID Kategori</label>
+                            <label for="id_petugas">ID Petugas</label>
                             <input type="text" class="form-control" id="id_petugas" name="id_petugas" placeholder="Masukkan ID Petugas">
                         </div>
                         <button type="submit" name="ubah" class="btn btn-primary float-right">Ubah Data Jadwal</button>
