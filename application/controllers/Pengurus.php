@@ -165,7 +165,7 @@ class Pengurus extends CI_Controller
             $this->load->view('pengurus/header', $data);
             $this->load->view('pengurus/sidebar', $data);
             $this->load->view('pengurus/topbar', $data);
-            $this->load->view('user/updatepetugas', $data);
+            $this->load->view('pengurus/updatepetugas', $data);
             $this->load->view('pengurus/footer');
         } else {
             $this->petugas_model->updateDataPetugas();
