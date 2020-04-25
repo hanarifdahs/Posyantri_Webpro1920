@@ -26,7 +26,7 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="username" name="password" placeholder="masukan password">
                         </div>
-                        <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data Kader</button>
+                        <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data Petugas</button>
                     </form>
                 </div>
             </div>
