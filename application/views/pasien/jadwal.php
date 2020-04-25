@@ -34,7 +34,7 @@
                 <td style="text-align: center"class="namakat"><?= $row['nama_kategori']; ?></td>
                 <td style="text-align: center"class="namapet"><?= $row['id_petugas']; ?></td>
                 <td>
-                    <a button style="width:125px;height:40px; margin: 0px auto;" type="button" href="#<?= ''.$row['id_jadwal'].'';?>" class="nav-link btn btn-primary" data-toggle="modal">Pilih Jadwal</a>
+                    <a button style="width:157px;height:40px; margin: 0px auto;" type="button" href="#<?= ''.$row['id_jadwal'].'';?>" class="nav-link btn btn-primary" data-toggle="modal">Pilih Jadwal</a>
                 </td>
             </tr>
             <div class="modal fade" id="<?= ''.$row['id_jadwal'].'';?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -13,7 +13,7 @@
       <img class="first-slide" src="<?=base_url()?>assets/img/posyandu1.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1>Pemeriksaan Batita</h1>
+          <h1>Pemeriksaan Batita dan Balita</h1>
           <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
         </div>
       </div>
@@ -23,7 +23,6 @@
       <div class="container">
         <div class="carousel-caption">
           <h1>Vaksin</h1>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
         </div>
       </div>
     </div>
@@ -32,7 +31,6 @@
       <div class="container">
         <div class="carousel-caption text-right">
           <h1>Senam Hamil</h1>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
         </div>
       </div>
     </div>
@@ -41,7 +39,6 @@
       <div class="container">
         <div class="carousel-caption text-right">
           <h1>Pembinaan Kader Posyandu</h1>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
         </div>
       </div>
     </div>
@@ -63,11 +60,12 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">Pemeriksaan bayi usia tiga tahun</h2>
-      <p class="lead">Pemeriksaan bayi usia tiga tahun dibantu oleh kader posyandu dan diadakan pemberian vaksin untuk bayi</p>
+      <h2 class="featurette-heading">Pemeriksaan Kesehatan Lansia</h2>
+      <p class="lead">Posyandu merupakan salah satu bentuk Upaya Kesehatan Bersumberdaya Masyarakat (UKBM) yang dikelola dari, oleh, untuk, dan
+                       bersama masyarakat, guna memberdayakan masyarakat dan memberikan kemudahan kepada masyarakat dalam memperoleh pelayanan kesehatan dasar. </p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="<?=base_url()?>assets/img/posyandu4.jpg" alt="Generic placeholder image">
+      <img class="featurette-image img-fluid mx-auto" src="<?=base_url()?>assets/img/posyandu8.jpg" alt="Generic placeholder image">
     </div>
   </div>
 
@@ -75,11 +73,11 @@
 
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Sosialisasi ibu hamil</h2>
-      <p class="lead">Pemeriksaan kesehatan bayi dalam kandungan pada ibu hamil serta sosialisasi mengenai kesehatan kandungan pada ibu hamil</p>
+      <h2 class="featurette-heading">Pelayanan Kesehatan Balita dan Batita</h2>
+      <p class="lead">Posyandu (Pos Pelayanan Terpadu) memberdayakan dan memberikan kemudahan kepada masyarakat guna memperoleh pelayanan kesehatan bagi lansia, ibu, bayi dan anak balita.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="<?=base_url()?>assets/img/posyandu5.jpg" alt="Generic placeholder image">
+      <img class="featurette-image img-fluid mx-auto" src="<?=base_url()?>assets/img/posyandu7.jpg" alt="Generic placeholder image">
     </div>
   </div>
 

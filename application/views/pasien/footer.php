@@ -1,8 +1,7 @@
-<footer class="site-footer">
-  <div id="footer-content">
-    <p>Posyantri - Webpro 19/20 </p>
+<footer class="page-footer font-small special-color-dark pt-4">
+  <div class="footer-copyright text-center py-3">Ayo ke Posyandu! 
   </div>
-</footer style="margin-top: auto; background: #FFFFF">
+</footer>
     <!--<script src="<?=base_url()?>assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" language="javascript" type="text/javascript"></script>-->
     <script src="<?=base_url()?>assets/js/jquery-3.2.1.slim.min.js" language="javascript" type="text/javascript"></script>
     <!--<script>window.jQuery || document.write("<script src='../../assets/js/vendor/jquery-slim.min.js' type='text/javascript'></script>");</script>-->

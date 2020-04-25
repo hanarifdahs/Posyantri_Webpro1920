@@ -12,17 +12,26 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<?=base_url()?>assets/css/carousel.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/main.css">
+	  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/mdb.min.css">
+    
     <style>
       .modal-backdrop {
         z-index: 1;
       }
+      
     </style>
-  </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -38,7 +47,7 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href=#>About</a>
             </li>
           </ul>
           <ul class="navbar-nav">

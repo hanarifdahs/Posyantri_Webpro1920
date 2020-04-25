@@ -1,4 +1,11 @@
-    <table id="tablebiodata">
+<div class="card text-center" id="account">
+  <div class="card-header">
+    
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">My Account</h4>
+    <p class="card-text"><table id="tablebiodata">
+    <table>
         <tr>
             <td>NIK</td>
             <td>:</td>
@@ -20,6 +27,15 @@
             <td><?php echo $biodata['alamat'] ; ?></td>
         </tr>
     </table>
+    </p>
+    <div style="margin-bottom:20px;">
+        <a href="#" class=btn btn-primary><button type="button" data-toggle="modal" data-target="#ubahbiodata">Ubah Biodata</button></a>
+        <a href="#" class=btn btn-primary><button>Ubah Password</button></a>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
 
     <style>
         #tablebiodata {
@@ -29,14 +45,10 @@
         #tablebiodata tr td {
             padding: 5px 10px;
         }
-    </style>
-
-    <div style="margin-bottom:20px;">
-        <a href="#"><button type="button" data-toggle="modal" data-target="#ubahbiodata">Ubah Biodata</button></a>
-        <a href="#"><button>Ubah Password</button></a>
-    </div>    
-
-    <!-- <h3>ini jadi modal biodata</h3> -->
+        #account{
+            padding: 50px 50px;
+        }
+    </style>  
 
     <div class="modal fade" id="ubahbiodata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

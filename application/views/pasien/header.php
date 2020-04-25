@@ -17,13 +17,15 @@
     <!-- Custom styles for this template -->
     <link href="<?=base_url()?>assets/css/carousel.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-	  <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/main.css">
+	  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/mdb.min.css">
+    
     <style>
       .modal-backdrop {
         z-index: 1;
@@ -83,16 +85,11 @@
             <?php };?>
 
         </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Logout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <ul>
+          <div class="logout">
+            <button style="margin-top: 8px;"type="button" class="btn btn-primary">Logout</button>
+            <a class="nav-link" href="<?php echo base_url('auth/Logout'); ?>"></a>
+  
+        </ul>
     </nav>
     </header>
