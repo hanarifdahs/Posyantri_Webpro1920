@@ -17,3 +17,7 @@
 body {
      padding-bottom: 0px !important;
 }
+
+.badge{
+    margin-left: 3px;
+}
