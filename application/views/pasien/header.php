@@ -92,7 +92,7 @@
             </li>
             <li class="nav-item active">
             <div class="dropdown">
-              <button class="nav-link active btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="nav-link active btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="<?=base_url()?>assets/img/person.svg"></span>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">

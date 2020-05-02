@@ -24,5 +24,26 @@ class mPasien extends CI_Model{
 		];
 		return $this->db->update('detailpasien', $data, array('id_pasien' => $id_pasien));
 	}
+
+	public function insertPasien($nik, $nama, $umur, $alamat, $username, $password){
+		$userdata = [
+			'name' => $nama,
+			'username' => $username,
+			'password' => $password,
+			'role_id' => 4,
+			'date_created' => 0
+		];
+		$this->db->insert('user', $userdata);
+		$idUser =  $this->db->insert_id();
+		
+		$pasienData = [
+			'nama' => $nama,
+			'umur' => $umur,
+			'alamat' => $alamat,
+			'NIK' => $nik,
+			'id_user' => $idUser
+		];
+		return $this->db->insert('detailpasien', $pasienData);
+	}
 }
 ?>

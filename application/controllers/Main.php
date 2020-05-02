@@ -9,6 +9,7 @@ class Main extends CI_Controller {
         $this->load->helper('url'); 
         $this->load->library('session');
         $this->load->model('mUser');
+        $this->load->model('mPasien');
     }
     
 	public function index()
@@ -62,7 +63,7 @@ class Main extends CI_Controller {
         }
         else{
             $this->session->set_flashdata('flash', 'Username/Password Salah');
-            redirect('Main/showLogin');
+            redirect('Main');
         }
     }
 
@@ -80,5 +81,20 @@ class Main extends CI_Controller {
 			redirect('Main');
 			exit;
 		}
+    }
+
+    public function register(){
+        $nama = $this->input->post('nama');
+        $umur = $this->input->post('umur');
+        $alamat = $this->input->post('alamat');
+        $nik = $this->input->post('nik');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $berhasil = $this->mPasien->insertPasien($nik, $nama, $umur, $alamat, $username, $password);
+        if($berhasil){
+            $this->session->set_flashdata('flash', 'Berhasil Registrasi, Silahkan Login');	
+            redirect('Main');
+        }
     }
 }
