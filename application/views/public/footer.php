@@ -11,5 +11,8 @@
     <script src="<?=base_url()?>assets/js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="<?=base_url()?>assets/js/holder.min.js" language="javascript" type="text/javascript"></script>
+    <?php if ($this->session->flashdata('flash')) : ?>
+      <script type="text/javascript"> $('#status').modal('show'); </script>
+    <?php endif; ?>
 </body>
 </html>
