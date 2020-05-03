@@ -15,6 +15,11 @@ class mPasien extends CI_Model{
 		return $this->db->get_where('detailpasien', array('id_user' => $id_user))->result_array()[0];
 	}
 
+	public function getUserById($id)
+    {
+        return $this->db->get_where('user', array('id' => $id))->result_array()[0];
+    }
+
 	public function updatePasien($nik, $nama, $umur, $alamat, $id_pasien){
 		$data = [
 			'nama' => $nama,
@@ -46,4 +51,3 @@ class mPasien extends CI_Model{
 		return $this->db->insert('detailpasien', $pasienData);
 	}
 }
-?>

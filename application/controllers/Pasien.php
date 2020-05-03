@@ -1,8 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pasien extends CI_Controller {
-    public function __construct(){
+class Pasien extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('mPasien');
         $this->load->model('mBooking');
@@ -11,32 +13,34 @@ class Pasien extends CI_Controller {
         $this->load->library('session');
     }
 
-	public function index()
-	{
+    public function index()
+    {
         $this->cekSession();
         $current['aktif'] = 'main';
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/main');
         $this->load->view('pasien/footer');
-	}
-
-    public function cekSession(){
-        if(!$this->session->is_active){
-			$this->session->set_flashdata('flash', 'Sesi berakhir');			
-			redirect('Main');
-			exit;
-		}
     }
 
-	public function logout()
-	{
+    public function cekSession()
+    {
+        if (!$this->session->is_active) {
+            $this->session->set_flashdata('flash', 'Sesi berakhir');
+            redirect('Main');
+            exit;
+        }
+    }
+
+    public function logout()
+    {
         $this->cekSession();
         $this->session->set_userdata('is_active', false);
-        $this->session->set_flashdata('flash', 'Berhasil Logout');	
+        $this->session->set_flashdata('flash', 'Berhasil Logout');
         redirect('Main');
     }
-    
-    public function Jadwal(){
+
+    public function Jadwal()
+    {
         $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
         $current['aktif'] = 'jadwal';
         $this->load->view('pasien/header', $current);
@@ -52,7 +56,8 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/footer');
     }*/
 
-    public function Booking(){
+    public function Booking()
+    {
         $id_pasien = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
         $data['antrian'] = $this->mBooking->getBookingByPasien_JoinJadwalKategori($id_pasien);
         $current['aktif'] = 'booking';
@@ -61,12 +66,13 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/footer');
     }
 
-    public function actionBooking(){
+    public function actionBooking()
+    {
         $this->cekSession();
         $id_jadwal = $this->input->post('id_jadwal');
         $id_pasien = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
         $id = $this->mBooking->insertBooking($id_jadwal, $id_pasien);
-        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = '.$id);
+        $this->session->set_flashdata('flash', 'Berhasil Booking Antrian dengan ID = ' . $id);
 
         $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
         $current['aktif'] = 'jadwal';
@@ -75,31 +81,62 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/footer');
     }
 
-    public function Account(){
+    public function Account()
+    {
         $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
+        $data['user'] = $this->mPasien->getUserById(($this->session->id));
         $current['aktif'] = 'account';
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');
     }
 
-    public function updateAccount(){
+    public function updateAccount()
+    {
         $nik = $this->input->post('nik');
         $nama = $this->input->post('nama');
         $umur = $this->input->post('umur');
         $alamat = $this->input->post('alamat');
         $id = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
-        $this->mPasien->updatePasien($nik,$nama,$umur,$alamat,$id);
+        $this->mPasien->updatePasien($nik, $nama, $umur, $alamat, $id);
 
         $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
-        $this->session->set_flashdata('flash', 'Berhasil Update Biodata');
         $current['aktif'] = 'account';
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');
     }
 
-    public function changePassword(){
+    public function updatePicture()
+    {
+
+        $data['user'] = $this->mPasien->getUserById(($this->session->id));
+
+        $upload_image = $_FILES['image']['name'];
+
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = '2048';
+            $config['upload_path'] = './assets/img/profile/';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+                $new_image = $this->upload->data('file_name');
+                $this->db->set('image', $new_image);
+            }
+        } else {
+            echo $this->upload->display_errors();
+        }
+
+        $this->db->update('user');
+        $this->session->set_flashdata('flash', 'Berhasil Update picture');
+        $current['aktif'] = 'account';
+        redirect('pasien/account');
+    }
+
+    public function changePassword()
+    {
         $newpass = $this->input->post('newpassword');
         $oldpass = $this->input->post('oldpassword');
     }
