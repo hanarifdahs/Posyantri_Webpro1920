@@ -1,5 +1,5 @@
 
-<main role="main" style="position: fixed;">
+<main role="main">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -50,7 +50,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 
   <!-- START THE FEATURETTES -->
 

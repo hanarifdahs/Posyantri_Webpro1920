@@ -53,83 +53,12 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <button type="button" class="nav-link active btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
-              <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <form method="post" action="<?php echo base_url('main/actionLogin'); ?>">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">Username</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Enter username" name="username">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" placeholder="Password" name="password">
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#register">Belum ada akun?</button>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-          <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <form method="post" action="<?php echo base_url('main/register'); ?>">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">NIK</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan NIK" name="nik">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">Nama</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Nama" name="nama">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">Umur</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Umur" name="umur">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">Alamat</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Alamat" name="alamat">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputUsername1">Username</label>
-                          <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Username" name="username">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" placeholder="Password" name="password">
-                        </div>
-                      <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#register">Sudah ada akun?</button>
-                        <button type="submit" class="btn btn-primary">Register</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-    <div class="modal fade" id="status" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="status" class="status" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <form method="post" action="<?php echo base_url('main/actionLogin'); ?>">
@@ -140,6 +69,81 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form method="post" action="<?php echo base_url('main/register'); ?>">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="exampleInputUsername1">NIK</label>
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan NIK" name="nik">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputUsername1">Nama</label>
+                  <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Nama" name="nama">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputUsername1">Umur</label>
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Umur" name="umur">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputUsername1">Alamat</label>
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Alamat" name="alamat">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputUsername1">Username</label>
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Masukkan Username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+              </div>
+            </div>
+            <div class="modal-footer">
+            <a type="button" class="btn btn-secondary" onclick="$('#register').one('hidden.bs.modal', function() { $('#login').modal('show'); }).modal('hide');">Sudah ada akun?</a>
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="login" class="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form method="post" action="<?php echo base_url('main/actionLogin'); ?>">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Username</label>
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Enter username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!--<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#register">Belum ada akun?</button>-->
+              <a type="button" class="btn btn-secondary" onclick="$('#login').one('hidden.bs.modal', function() { $('#register').modal('show'); }).modal('hide');">Belum ada akun?</a>
+              <button type="submit" class="btn btn-primary">Login</button>
             </div>
           </form>
         </div>
