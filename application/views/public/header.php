@@ -62,7 +62,6 @@
     <div class="modal fade" id="status" class="status" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form method="post" action="<?php echo base_url('main/actionLogin'); ?>">
             <div class="modal-header">
             <div class="form-group">
               <?= $this->session->flashdata('flash'); ?>
@@ -71,7 +70,6 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-          </form>
         </div>
       </div>
     </div>

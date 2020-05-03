@@ -96,7 +96,7 @@
               <img src="<?=base_url()?>assets/img/person.svg"></span>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item disabled"><?php echo $this->session->username; ?></a>
+                <a class="dropdown-item disabled"><?php echo $this->session->name; ?></a>
                 <div class="dropdown-divider"></div>
                 <?php if ($aktif=='account'){ ?>
                 <a class="dropdown-item active" href="<?php echo base_url('Pasien/Account'); ?>">My Account</a>
@@ -110,3 +110,18 @@
         </ul>
       </nav>
     </header>
+
+    <div class="modal fade" id="accountstatus" class="status" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <div class="form-group">
+              <?= $this->session->flashdata('flash'); ?>
+            </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>

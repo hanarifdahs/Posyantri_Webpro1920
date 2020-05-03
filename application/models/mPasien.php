@@ -50,4 +50,13 @@ class mPasien extends CI_Model{
 		];
 		return $this->db->insert('detailpasien', $pasienData);
 	}
+
+	public function getPassword(){
+		$query = $this->db->get_where('user', array('id' => $this->session->id));
+		return $query->result_array()[0]['password'];
+	}
+
+	public function updatePassword($newpass){
+		return $this->db->update('user', array('password' => $newpass), array('id' => $this->session->id));
+	}
 }

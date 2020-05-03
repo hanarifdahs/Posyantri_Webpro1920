@@ -100,11 +100,8 @@ class Pasien extends CI_Controller
         $id = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
         $this->mPasien->updatePasien($nik, $nama, $umur, $alamat, $id);
 
-        $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
-        $current['aktif'] = 'account';
-        $this->load->view('pasien/header', $current);
-        $this->load->view('pasien/account', $data);
-        $this->load->view('pasien/footer');
+        $this->session->set_flashdata('flash', 'Berhasil Update Biodata');
+        redirect('Pasien/Account');
     }
 
     public function updatePicture()
@@ -135,9 +132,23 @@ class Pasien extends CI_Controller
         redirect('pasien/account');
     }
 
-    public function changePassword()
-    {
+    public function changePassword(){
         $newpass = $this->input->post('newpassword');
+        $confirmpass = $this->input->post('confirmpass');
         $oldpass = $this->input->post('oldpassword');
+
+        if ($oldpass == $this->mPasien->getPassword()){
+            if ($newpass == $confirmpass) {
+                $this->mPasien->updatePassword($newpass);
+                $this->session->set_flashdata('flash', 'Berhasil Ubah Password');
+            }
+            else{
+                $this->session->set_flashdata('flash', 'Password Konfirmasi Harus Sama');
+            }
+        }
+        else{
+            $this->session->set_flashdata('flash', 'Password Lama Salah');
+        }
+        redirect('Pasien/Account');
     }
 }

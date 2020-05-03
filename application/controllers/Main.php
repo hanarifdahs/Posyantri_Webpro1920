@@ -39,6 +39,7 @@ class Main extends CI_Controller {
             
             $dataSession = array(
                 'id' => $dataLogin[0]['id'],
+                'name' => $dataLogin[0]['name'],
 				'username' => $username,
                 'role' => $role,
                 'is_active' => true
@@ -47,16 +48,16 @@ class Main extends CI_Controller {
             
             if ($role == 'pasien') {
                 //redirect controller pasien
-                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
+                $this->session->set_flashdata('flash', $role." ".$this->session->name.' berhasil login');
                 redirect('Pasien');
             }
             else if ($role == 'kader'){
                 //redirect('Kader');
-                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
+                $this->session->set_flashdata('flash', $role.$this->session->name.' telah login');
                 redirect('Kader'); 
             }
             else if ($role == 'pengurus'){
-                $this->session->set_flashdata('flash', $role.$this->session->id.' telah login');
+                $this->session->set_flashdata('flash', $role.$this->session->name.' telah login');
                 redirect('Pengurus');
                 //placeholder, belum ada controller pengurus
             }

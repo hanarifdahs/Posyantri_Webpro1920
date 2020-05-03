@@ -98,6 +98,7 @@
         </form>
     </div>
 </div>
+
 <div class="modal fade" id="ubahpicture" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form method="post" action="<?= base_url('Pasien/updatePicture/') ?>" enctype="multipart/form-data">
@@ -127,3 +128,36 @@
         </form>
     </div>
 </div>
+
+<div class="modal fade" id="ubahpassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form method="post" action="<?php echo base_url('Pasien/changePassword/') ?>">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ubah Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Password Lama</label>
+                        <input type="password" class="form-control" name="oldpassword" id="oldpassword">
+                    </div>
+                    <div class="form-group">
+                        <label>Password Baru</label>
+                        <input type="password" class="form-control" name="newpassword" id="newpassword">
+                    </div>
+                    <div class="form-group">
+                        <label>Konfirmasi Password Baru</label>
+                        <input type="password" class="form-control" name="confirmpass" id="confirmpass">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>        
+</div>
+
