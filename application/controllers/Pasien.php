@@ -17,6 +17,7 @@ class Pasien extends CI_Controller
     {
         $this->cekSession();
         $current['aktif'] = 'main';
+        $current['user'] = $this->mPasien->getUserById(($this->session->id));
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/main');
         $this->load->view('pasien/footer');
@@ -61,6 +62,7 @@ class Pasien extends CI_Controller
         $id_pasien = $this->mPasien->getPasienByUser($this->session->id)['id_pasien'];
         $data['antrian'] = $this->mBooking->getBookingByPasien_JoinJadwalKategori($id_pasien);
         $current['aktif'] = 'booking';
+        $current['user'] = $this->mPasien->getUserById(($this->session->id));
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/antrian', $data);
         $this->load->view('pasien/footer');
@@ -76,6 +78,7 @@ class Pasien extends CI_Controller
 
         $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
         $current['aktif'] = 'jadwal';
+        $current['user'] = $this->mPasien->getUserById(($this->session->id));
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/jadwal', $data);
         $this->load->view('pasien/footer');
@@ -86,6 +89,7 @@ class Pasien extends CI_Controller
         $data['biodata'] = $this->mPasien->getPasienByUser($this->session->id);
         $data['user'] = $this->mPasien->getUserById(($this->session->id));
         $current['aktif'] = 'account';
+        $current['user'] = $this->mPasien->getUserById(($this->session->id));
         $this->load->view('pasien/header', $current);
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');

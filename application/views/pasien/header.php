@@ -93,7 +93,7 @@
             <li class="nav-item active">
             <div class="dropdown">
               <button class="nav-link active btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="<?=base_url()?>assets/img/person.svg"></span>
+              <img src=" <?= base_url('assets/img/profile/') . $user['image']; ?>" class="navbar-brand">
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item disabled"><?php echo $this->session->name; ?></a>

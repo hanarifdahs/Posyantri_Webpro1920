@@ -32,7 +32,7 @@
         </p>
         <div style="margin-bottom:20px;">
             <a href="#" class=btn btn-primary><button type="button" data-toggle="modal" data-target="#ubahbiodata">Ubah Biodata</button></a>
-            <a href="#" class=btn btn-primary><button>Ubah Password</button></a>
+            <a href="#" class=btn btn-primary><button type="button" data-toggle="modal" data-target="#ubahpassword">Ubah Password</button></a>
             <a href="#" class=btn btn-primary><button type="button" data-toggle="modal" data-target="#ubahpicture">Ubah Picture</button></a>
         </div>
     </div>
@@ -152,6 +152,7 @@
                         <label>Konfirmasi Password Baru</label>
                         <input type="password" class="form-control" name="confirmpass" id="confirmpass">
                     </div>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
