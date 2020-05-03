@@ -10,19 +10,19 @@
             </div>
         </div>
     <?php endif; ?>
-    
+
     <table class="table" id="tablenyahana" border=1>
         <div id="table">
         <thead class="thead-dark">
             <tr>
-                <!--th class="text-center" scope="col">ID</th>-->
+                <th class="text-center" scope="col">ID</th>
                 <th class="text-center" scope="col">Tanggal</th>
                 <th class="text-center" scope="col">Jam</th>
                 <th class="text-center" scope="col">Kategori</th>
                 <th class="text-center" scope="col">Petugas</th>
                 <th class="text-center" scope="col"> </th>
             </tr>
-        </thead>    
+        </thead>
         <tbody>
             <?php $date = date('Y-m-d'); $time = date('H:i');?>
             <?php foreach ($jadwal as $row){ ?>
@@ -76,6 +76,4 @@
             <?php }} ?>
         </tbody>
         </div>
-    </table>
-
-    
+    </table> 

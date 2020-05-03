@@ -5,6 +5,7 @@
   <div class="card-body">
     <h4 class="card-title">My Account</h4>
     <p class="card-text"><table id="tablebiodata">
+    <img src="<?=base_url()?>assets/img/logofixfix-removebg-preview-removebg-preview.png" alt="Avatar" class="avatar">
     <table>
         <tr>
             <td>NIK</td>
@@ -39,7 +40,7 @@
 
     <style>
         #tablebiodata {
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
         #tablebiodata tr td {
@@ -47,6 +48,12 @@
         }
         #account{
             padding: 50px 50px;
+        }
+        .avatar {
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
         }
     </style>  
 
