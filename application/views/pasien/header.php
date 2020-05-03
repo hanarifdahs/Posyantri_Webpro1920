@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/vendor/animate/animate.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/mdb.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">

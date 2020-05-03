@@ -6,10 +6,10 @@
     <h4 class="card-title">My Account</h4>
     <p class="card-text"><table id="tablebiodata">
     <img src="<?=base_url()?>assets/img/logofixfix-removebg-preview-removebg-preview.png" alt="Avatar" class="avatar">
-    <table>
+    <table style="width: 300px;">
         <tr>
-            <td>NIK</td>
-            <td>:</td>
+            <td style="width: 70px;">NIK</td>
+            <td style="width: 30px;">:</td>
             <td><?php echo $biodata['NIK'] ; ?></td>
         </tr>
         <tr>
