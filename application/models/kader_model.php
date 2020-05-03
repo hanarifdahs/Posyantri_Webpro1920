@@ -1,6 +1,8 @@
-<?php 
-class kader_model extends CI_Model{
-    public function __construct(){
+<?php
+class kader_model extends CI_Model
+{
+    public function __construct()
+    {
         $this->load->database();
     }
     //-----------------------------------------------------
@@ -9,6 +11,11 @@ class kader_model extends CI_Model{
     {
         $query = $this->db->get('user');
         return $query->result_array();
+    }
+
+    public function getdataforfooter($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
     }
 
     public function tambahDataKader()
@@ -47,4 +54,3 @@ class kader_model extends CI_Model{
         $this->db->update('user', $data);
     }
 }
-?>

@@ -41,8 +41,15 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('pengurus/logout') ?>">
-                    <i class="fas fa-fw fa-table"></i>
+                <a class="nav-link" href="<?= base_url('pengurus/editprofile') ?>">
+                    <i class="fas fa-users"></i>
+                    <span>My Profile</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('pengurus/logout') ?>" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
 
