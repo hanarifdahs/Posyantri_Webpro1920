@@ -78,4 +78,46 @@
     </div>
   </div>
 
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2" style="text-align:center;margin-left:265px">
+      <h2 class="featurette-heading">POSYANTRI</h2>
+      <br>
+      <p class="lead">Aplikasi Posyantri merupakan aplikasi booking antrian Posyandu yang bertujuan untuk memudahkan pasien memesan jadwal pelayanan kesehatan lebih efisien.</p>
+    </div>
+  </div>
+
   <!-- /END THE FEATURETTES -->
+<br>
+<br>
+  <div class="row">
+    <div class="column" style="padding:60px 60px">
+      <div class="text-center">
+        <div class="wajah-img"></div>
+        <img style="vertical-align: middle;width: 200px;height: 200px;border-radius: 50%;"src="<?=base_url()?>assets/img/hilman.jpg" alt="Avatar" class="avatar">
+        <div class="bold lh-1">Aditya Nugroho P</div>
+      </div>
+    </div>
+    <div class="column" style="padding:60px 60px">
+      <div class="text-center">
+        <div class="wajah-img"></div>
+        <img style="vertical-align: middle;width: 200px;height: 200px;border-radius: 50%;"src="<?=base_url()?>assets/img/hilman.jpg" alt="Avatar" class="avatar">
+        <div class="bold lh-1">Farizan Cesario</div>
+      </div>
+    </div>
+    
+    
+    <div class="column" style="padding:60px 60px">
+      <div class="text-center">
+        <div class="wajah-img" ></div>
+        <img style="vertical-align: middle;width: 200px;height: 200px;border-radius: 50%;"src="<?=base_url()?>assets/img/hilman.jpg" alt="Avatar" class="avatar">
+        <div class="bold lh-1">Hilman Abdan</div>
+      </div>
+    </div>
+    <div class="column" style="padding:60px 60px">
+      <div class="text-center">
+        <div class="wajah-img" ></div>
+        <img style="vertical-align: middle;width: 200px;height: 200px;border-radius: 50%;"src="<?=base_url()?>assets/img/hilman.jpg" alt="Avatar" class="avatar">
+        <div class="bold lh-1">Hana Rifdah</div>
+      </div>
+    </div>
+  </div>

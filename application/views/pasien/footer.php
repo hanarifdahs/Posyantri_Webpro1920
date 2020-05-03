@@ -14,6 +14,9 @@
     <script src="<?=base_url()?>vendor/select2/select2.min.js"language="javascript" type="text/javascript"></script>
     <script src="<?=base_url()?>js/main.js"language="javascript" type="text/javascript"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    
+
+
 
     <script>
     $(document).ready( function () {

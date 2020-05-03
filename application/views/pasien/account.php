@@ -62,7 +62,7 @@
             <form method="post" action="<?php echo base_url('Pasien/updateAccount/') ?>">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ubah Biodata</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -70,19 +70,19 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>NIK</label>
-                            <input type="text" class="form-control" value="<?php echo $biodata['NIK'] ; ?>" name="nik" id="nik">
+                            <input type="nik" class="form-control" value="<?php echo $biodata['NIK'] ; ?>" name="nik" id="nik">
                         </div>
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" value="<?php echo $biodata['nama'] ; ?>" name="nama" id="nik">
+                            <input type="text" class="form-control" value="<?php echo $biodata['nama'] ; ?>" name="nama" id="nama">
                         </div>
                         <div class="form-group">
                             <label>Umur</label>
-                            <input type="text" class="form-control" value="<?php echo $biodata['umur'] ; ?>" name="umur" id="nik">
+                            <input type="text" class="form-control" value="<?php echo $biodata['umur'] ; ?>" name="umur" id="umur">
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" value="<?php echo $biodata['alamat'] ; ?>" name="alamat" id="nik">
+                            <input type="text" class="form-control" value="<?php echo $biodata['alamat'] ; ?>" name="alamat" id="alamat">
                         </div>
                     </div>
                     <div class="modal-footer">
