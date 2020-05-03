@@ -157,7 +157,7 @@ class Kader extends CI_Controller {
     public function detailbooking($id)
     {
         $data['title'] = 'Detail Data Booking';
-        $data['user'] = $this->mBooking->getBookingByPasien_JoinJadwalKategori($id)[0];
+        $data['user'] = $this->mBooking->getJadwalByBooking_JoinKategori($id)[0];
 
         $this->load->view('kader/header', $data);
         $this->load->view('kader/sidebar', $data);
@@ -168,7 +168,9 @@ class Kader extends CI_Controller {
 
     public function konfirmbooking($id)
     {
+        $data['user'] = $this->mBooking->getJadwalByBooking_JoinKategori($id)[0];
         $this->mBooking->konfirmasiBooking($id);
+        $this->mJadwal->take_jadwal($user['id_jadwal']);
         $this->session->set_flashdata('flash', 'dikonfirmasi');
         redirect('kader/k_booking');
     }

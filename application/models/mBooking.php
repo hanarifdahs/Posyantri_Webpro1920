@@ -30,6 +30,13 @@ class mBooking extends CI_Model{
         $query = $this->db->get_where('booking', array('id_pasien' => $id_pasien));
         return $query->result_array();
     }
+
+    public function getJadwalByBooking_JoinKategori($id_booking){
+        $this->db->join('jadwal', 'booking.id_jadwal = jadwal.id_jadwal');
+        $this->db->join('kategori', 'kategori.id_kategori = jadwal.id_kategori');
+        $query = $this->db->get_where('booking', array('id_booking' => $id_booking));
+        return $query->result_array();
+    }
     
     public function insertBooking($id_jadwal, $id_pasien){
         $data = [
