@@ -14,5 +14,10 @@
     <?php if ($this->session->flashdata('flash')) : ?>
       <script type="text/javascript"> $('#status').modal('show'); </script>
     <?php endif; ?>
+    <script>
+      function scrollWin() {
+        window.scrollTo(0, 1700);
+      }
+</script>
 </body>
 </html>

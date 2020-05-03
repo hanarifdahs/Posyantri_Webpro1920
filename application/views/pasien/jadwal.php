@@ -36,7 +36,7 @@
                 <?php foreach ($jadwal as $row){ ?>
                 <?php if($row['taken']==0 && $row['tanggal']==$date && $row['jam'] > $time){ ?>
                 <tr>
-                    <!--<td style="text-align: center"class="id"><?= $row['id_jadwal']; ?></td>-->
+                    <td style="text-align: center"class="id"><?= $row['id_jadwal']; ?></td>
                     <td style="text-align: center"class="tgl"><?= $row['tanggal']; ?></td>
                     <td style="text-align: center"class="jam"><?= $row['jam']; ?></td>
                     <td style="text-align: center"class="namakat"><?= $row['nama_kategori']; ?></td>

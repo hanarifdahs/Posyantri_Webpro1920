@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/mdb.min.css">
+
     
     <style>
       .modal-backdrop {
@@ -43,16 +44,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item"style="padding:5px;">
+              <a class="nav-link" style="border-radius: 10px" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href=#>About</a>
+            <li class="nav-item"style="padding:5px;">
+              <a onclick="scrollWin()" style="border-radius: 10px" class="nav-link">About <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <button type="button" class="nav-link active btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
+            <li class="nav-item "style="padding:5px;">
+              <button type="button" style="border-radius: 10px"class="nav-link active btn btn-primary" data-toggle="modal" data-target="#login">Login</button>
             </li>
           </ul>
         </div>

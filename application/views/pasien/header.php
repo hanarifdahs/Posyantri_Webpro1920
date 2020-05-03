@@ -45,31 +45,31 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <?php if ($aktif=='main'){ ?>
-            <li class="nav-item active">
+            <li class="nav-item active" style="padding:5px;border-radius:10px;">
               <a class="nav-link" href="<?php echo base_url('Pasien'); ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <?php }else{ ?>
-            <li class="nav-item">
+            <li class="nav-item"style="padding:5px;border-radius:10px;">
               <a class="nav-link" href="<?php echo base_url('Pasien'); ?>">Home <span class="sr-only">(current)</span></a>
             </li> 
             <?php };?>
 
             <?php if ($aktif=='jadwal'){ ?>
-            <li class="nav-item active">
+            <li class="nav-item active"style="padding:5px;border-radius:10px">
               <a class="nav-link" href="<?php echo base_url('Pasien/Jadwal'); ?>">Jadwal</a>
             </li>
             <?php }else{ ?>
-            <li class="nav-item">
+            <li class="nav-item"style="padding:5px;border-radius:10px;">
               <a class="nav-link" href="<?php echo base_url('Pasien/Jadwal'); ?>">Jadwal</a>
             </li>
             <?php };?>
 
             <?php if ($aktif=='booking'){ ?>
-            <li class="nav-item active">
+            <li class="nav-item active"style="padding:5px;border-radius:10px;">
               <a class="nav-link" href="<?php echo base_url('Pasien/Booking'); ?>">Antrian Saya</a>
             </li>
             <?php }else{ ?>
-            <li class="nav-item">
+            <li class="nav-item"style="padding:5px;border-radius:10px;">
               <a class="nav-link" href="<?php echo base_url('Pasien/Booking'); ?>">Antrian Saya</a>
             </li>
             <?php };?>
