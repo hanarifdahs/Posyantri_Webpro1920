@@ -23,12 +23,20 @@
                             <input type="time" class="form-control" id="jam" name="jam">
                         </div>
                         <div class="form-group">
-                            <label for="id_kategori">ID Kategori</label>
-                            <input type="text" class="form-control" id="id_kategori" name="id_kategori" placeholder="Masukkan ID Kategori">
+                            <label for="id_kategori">Kategori Pemeriksaan</label>
+                            <select class="form-control" id="id_kategori" name="id_kategori">
+                                <?php foreach($kategori as $value){ ?>
+                                    <option value=<?= $value['id_kategori'] ?>><?= $value['nama_kategori'] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="id_petugas">ID Petugas</label>
-                            <input type="text" class="form-control" id="id_petugas" name="id_petugas" placeholder="Masukkan ID Petugas">
+                            <label for="id_petugas">Petugas Kesehatan Penanggung Jawab</label>
+                            <select class="form-control" id="id_petugas" name="id_petugas">
+                                <?php foreach($petugas as $value){ ?>
+                                    <option value=<?= $value['id'] ?>><?= $value['name'] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Jadwal</button>
                     </form>

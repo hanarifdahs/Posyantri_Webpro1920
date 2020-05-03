@@ -7,6 +7,8 @@ class Kader extends CI_Controller {
         $this->load->model('kader_model');
         $this->load->model('mBooking');
         $this->load->model('mJadwal');
+        $this->load->model('mKategori');
+        $this->load->model('petugas_model');
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
@@ -77,6 +79,8 @@ class Kader extends CI_Controller {
         $this->form_validation->set_rules('id_kategori', 'Kategori', 'required');
         $this->form_validation->set_rules('id_petugas', 'ID Petugas', 'required');
 
+        $data['kategori'] = $this->mKategori->getAllKategori();
+        $data['petugas'] = $this->petugas_model->getAllPetugasOnly();
 
         if ($this->form_validation->run() == false) {
             $this->load->view('kader/header', $data);

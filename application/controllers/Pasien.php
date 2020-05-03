@@ -98,4 +98,9 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/account', $data);
         $this->load->view('pasien/footer');
     }
+
+    public function changePassword(){
+        $newpass = $this->input->post('newpassword');
+        $oldpass = $this->input->post('oldpassword');
+    }
 }

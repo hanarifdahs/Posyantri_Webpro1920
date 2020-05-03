@@ -8,6 +8,12 @@ class petugas_model extends CI_model
         return $query->result_array();
     }
 
+    public function getAllPetugasOnly()
+    {
+        $query = $this->db->get_where('user', array('role_id' => 3));
+        return $query->result_array();
+    }
+
     public function tambahDataPetugas()
     {
         $data = [
