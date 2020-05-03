@@ -15,7 +15,7 @@ class mBooking extends CI_Model{
     public function getAllBookingJoin(){
 		$this->db->select('*');
         $this->db->from('booking');
-        $this->db->join('jadwal', 'jadwal.id_jadwal = booking.id_booking');
+        $this->db->join('jadwal', 'jadwal.id_jadwal = booking.id_jadwal');
         $query = $this->db->get();
         return $query->result_array();
     }

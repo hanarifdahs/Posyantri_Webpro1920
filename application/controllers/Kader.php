@@ -168,9 +168,10 @@ class Kader extends CI_Controller {
 
     public function konfirmbooking($id)
     {
-        $data['user'] = $this->mBooking->getJadwalByBooking_JoinKategori($id)[0];
+        $data = $this->mBooking->getBookingbyID($id);
+
         $this->mBooking->konfirmasiBooking($id);
-        $this->mJadwal->take_jadwal($user['id_jadwal']);
+        $this->mJadwal->take_jadwal($data['id_jadwal']);
         $this->session->set_flashdata('flash', 'dikonfirmasi');
         redirect('kader/k_booking');
     }

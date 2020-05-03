@@ -33,7 +33,7 @@
                             <a href="<?= base_url(); ?>kader/hapusjadwal/<?= $usr['id_jadwal']; ?>" class="badge badge-danger float-right" onclick="return confirm('yakin?');">Hapus</a>
                             <a href="<?= base_url(); ?>kader/detailjadwal/<?= $usr['id_jadwal']; ?>" class="badge badge-primary float-right">Detail</a>
                             <a href="<?= base_url(); ?>kader/updatejadwal/<?= $usr['id_jadwal']; ?>" class="badge badge-success float-right">Update</a>
-                            <a href="<?= base_url(); ?>kader/takejadwal/<?= $usr['id_jadwal']; ?>" class="badge badge-danger float-right" onclick="return confirm('yakin?');">Take</a>
+                            
                         </li>
                     <?php endforeach; ?>
                 </ul>
