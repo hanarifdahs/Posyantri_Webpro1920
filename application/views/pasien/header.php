@@ -92,9 +92,10 @@
             </li>
             <li class="nav-item active">
             <div class="dropdown">
-              <button class="nav-link active btn btn-light" style = "padding: 1px 1px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src=" <?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-responsive" style="max-height: 50px; max-width: 50px;">
-              </button>
+              <a class="nav-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?= $this->session->name; ?>
+              <img src=" <?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-profile rounded-circle" style="max-height: 50px; max-width: 50px;">
+                            </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item disabled"><?php echo $this->session->name; ?></a>
                 <div class="dropdown-divider"></div>
