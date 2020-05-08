@@ -77,6 +77,8 @@
       <img class="featurette-image img-fluid mx-auto" src="<?=base_url()?>assets/img/posyandu7.jpg" alt="Generic placeholder image">
     </div>
   </div>
+  
+  <hr class="featurette-divider">
 
   <div class="row">
     <div class="col" style="text-align:center;">
