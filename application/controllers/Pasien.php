@@ -42,6 +42,7 @@ class Pasien extends CI_Controller
 
     public function Jadwal()
     {
+        $current['user'] = $this->mPasien->getUserById(($this->session->id));
         $data['jadwal'] = $this->mJadwal->getAllJadwalJoin();
         $current['aktif'] = 'jadwal';
         $this->load->view('pasien/header', $current);
@@ -129,7 +130,7 @@ class Pasien extends CI_Controller
         } else {
             echo $this->upload->display_errors();
         }
-
+        $this->db->where(array('id' => $this->session->id));
         $this->db->update('user');
         $this->session->set_flashdata('flash', 'Berhasil Update picture');
         $current['aktif'] = 'account';
